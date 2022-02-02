@@ -16,17 +16,25 @@ public class MoveToTarget : Agent
 	private RayPerceptionSensorComponent3D rayPerception;
 	private Rigidbody rigidBody;
 	private ModelManager modelManager;
+	private Camera mainCamera;
+	private GameObject agentCameraObject;
 
 	public float moveSpeed;
 	public float rotateSpeed;
 	public float wallReward;
 	public float goalReward;
+	public bool useAgentCamera;
 
     public void Start()
     {
 		rayPerception = GetComponent<RayPerceptionSensorComponent3D>();
 		rigidBody = GetComponent<Rigidbody>();
 		modelManager = GetComponentInParent<ModelManager>();
+		
+		mainCamera = Camera.main;
+		agentCameraObject = transform.GetChild(0).GetChild(0).gameObject;
+		agentCameraObject.SetActive(useAgentCamera);
+		mainCamera.enabled = !useAgentCamera;
 	} 
 
     public override void OnEpisodeBegin()
@@ -43,6 +51,7 @@ public class MoveToTarget : Agent
 	{
 		sensor.AddObservation(transform.localPosition);
 		sensor.AddObservation(transform.forward);
+		sensor.AddObservation(rigidBody.velocity);
 		sensor.AddObservation(targetTransform.localPosition);
 
         // raycast

@@ -1,5 +1,5 @@
 behaviors:
-  MoveToGoal:
+  TargetSeeker:
     trainer_type: ppo
     hyperparameters:
       batch_size: 10
@@ -22,11 +22,11 @@ behaviors:
         strength: 1.0
       gail:
         strength: 0.5
-        demo_path: Demos/BetterDemo.demo
+        demo_path: Demos/Demo_L3.demo
     behavioral_cloning:
       strength: 1
-      demo_path: Demos/BetterDemo.demo
-    max_steps: 500000
+      demo_path: Demos/Demo_L3.demo
+    max_steps: 2.0e6
     time_horizon: 64
     summary_freq: 10000
 
@@ -37,7 +37,7 @@ environment_parameters:
       - name: FirstLesson # The '-' is important as this is a list
         completion_criteria:
           measure: progress
-          behavior: MoveToGoal
+          behavior: TargetSeeker
           signal_smoothing: true
           min_lesson_length: 1000
           threshold: 0.2
@@ -45,11 +45,20 @@ environment_parameters:
       - name: SecondLesson # This is the start of the second lesson
         completion_criteria:
           measure: progress
-          behavior: MoveToGoal
+          behavior: TargetSeeker
           signal_smoothing: true
           min_lesson_length: 1000
           threshold: 0.4
           require_reset: true
         value: 1
-      - name: MyLastLesson
+      - name: ThirdLesson # This is the start of the second lesson
+        completion_criteria:
+          measure: progress
+          behavior: TargetSeeker
+          signal_smoothing: true
+          min_lesson_length: 1000
+          threshold: 0.6
+          require_reset: true
         value: 2
+      - name: FourthLesson
+        value: 3

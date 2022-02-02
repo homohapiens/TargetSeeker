@@ -1,5 +1,6 @@
+# Config with pure RL
 behaviors:
-  MoveToGoal:
+  TargetSeeker:
     trainer_type: ppo
     hyperparameters:
       batch_size: 10
@@ -20,15 +21,6 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 1.0
-      curiosity:
-        gamma: 0.99
-        strength: 1
-      gail:
-        strength: 0.5
-        demo_path: Demos/BetterDemo.demo
-    behavioral_cloning:
-      strength: 0.5
-      demo_path: Demos/BetterDemo.demo
-    max_steps: 500000
+    max_steps: 2.0e6
     time_horizon: 64
     summary_freq: 10000

@@ -618,8 +618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7890793887327955612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.95955, z: 0}
-  m_LocalScale: {x: 18, y: 0.84852326, z: 18}
+  m_LocalPosition: {x: 0, y: -0.75, z: 0}
+  m_LocalScale: {x: 18, y: 0.5, z: 18}
   m_Children: []
   m_Father: {fileID: 7895577948222401854}
   m_RootOrder: 2
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 9
+    VectorObservationSize: 12
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 3
@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: MoveToGoal
+  m_BehaviorName: TargetSeeker
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -894,6 +894,7 @@ MonoBehaviour:
   rotateSpeed: 100
   wallReward: -1
   goalReward: 3
+  useAgentCamera: 0
 --- !u!114 &7892023981054404960
 MonoBehaviour:
   m_ObjectHideFlags: 0

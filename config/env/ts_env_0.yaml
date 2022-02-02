@@ -1,5 +1,6 @@
+# Using environment parameters - Agent Level 0 
 behaviors:
-  MoveToGoal:
+  TargetSeeker:
     trainer_type: ppo
     hyperparameters:
       batch_size: 10
@@ -18,8 +19,20 @@ behaviors:
       num_layers: 2
     reward_signals:
       extrinsic:
-        gamma: 0.99
         strength: 1.0
-    max_steps: 500000
+        gamma: 0.99
+      gail:
+        strength: 0.5
+        gamma: 0.99
+        demo_path: Demos/Demo_L3.demo
+    behavioral_cloning:
+      strength: 0.5
+      demo_path: Demos/Demo_L3.demo
+    max_steps: 2.0e6
     time_horizon: 64
     summary_freq: 10000
+
+# Environment settings
+environment_parameters:
+  # Agent levels - 0,1,2,3
+  agent_level: 0

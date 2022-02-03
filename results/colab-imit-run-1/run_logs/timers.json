@@ -1,0 +1,63 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1643820225",
+        "python_version": "3.7.12 (default, Sep 10 2021, 00:21:48) \n[GCC 7.5.0]",
+        "command_line_arguments": "/usr/local/bin/mlagents-learn config/imit/ts_imit_hard.yaml --run-id=colab-imit-run-1 --env=build/linux/TargetSeeker.x86_64 --num-envs=1 --no-graphics --force",
+        "mlagents_version": "0.28.0",
+        "mlagents_envs_version": "0.28.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.1+cu102",
+        "numpy_version": "1.19.5",
+        "end_time_seconds": "1643820235"
+    },
+    "total": 9.465856110999994,
+    "count": 1,
+    "self": 0.4949314199998298,
+    "children": {
+        "run_training.setup": {
+            "total": 0.12666617200011387,
+            "count": 1,
+            "self": 0.12666617200011387
+        },
+        "TrainerController.start_learning": {
+            "total": 8.84425851900005,
+            "count": 1,
+            "self": 0.0004357220000201778,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 8.83083388099999,
+                    "count": 1,
+                    "self": 8.830243227999972,
+                    "children": {
+                        "demo_to_buffer": {
+                            "total": 0.0005906530000174826,
+                            "count": 1,
+                            "self": 2.602399990792037e-05,
+                            "children": {
+                                "load_demonstration": {
+                                    "total": 0.0005646290001095622,
+                                    "count": 1,
+                                    "self": 0.0005646290001095622
+                                }
+                            }
+                        }
+                    }
+                },
+                "TrainerController._save_models": {
+                    "total": 0.012988916000040263,
+                    "count": 1,
+                    "self": 0.0012133830000493617,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.0117755329999909,
+                            "count": 1,
+                            "self": 0.0117755329999909
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

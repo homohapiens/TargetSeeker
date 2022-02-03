@@ -1,0 +1,58 @@
+Mono path[0] = '/gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Managed'
+Mono config path = '/gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/MonoBleedingEdge/etc'
+Preloaded 'lib_burst_generated.so'
+Preloaded 'libgrpc_csharp_ext.x64.so'
+Initialize engine version: 2020.3.26f1 (7298b473bc1a)
+[Subsystems] Discovering subsystems at path /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.916 seconds
+ERROR: Shader Sprites/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader Sprites/Mask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader Legacy Shaders/VertexLit shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Standard shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Autodesk Interactive' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Autodesk Interactive shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Autodesk Interactive' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Legacy Shaders/Diffuse shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'ML-Agents/GridPattern' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader ML-Agents/GridPattern shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'ML-Agents/GridPattern' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+UnloadTime: 0.764286 ms
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libcoreclr.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libcoreclr.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libcoreclr.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libSystem.dylib
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libSystem.dylib.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libSystem.dylib
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libcoreclr.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libcoreclr.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libcoreclr.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libSystem.dylib
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libSystem.dylib.so
+Fallback handler could not load library /gdrive/MyDrive/Colab Notebooks/TargetSeeker/build/linux/TargetSeeker_Data/Mono/libSystem.dylib

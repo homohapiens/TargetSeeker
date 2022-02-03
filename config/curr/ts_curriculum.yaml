@@ -18,14 +18,8 @@ behaviors:
       num_layers: 2
     reward_signals:
       extrinsic:
-        gamma: 0.1
-        strength: 1.0
-      gail:
-        strength: 0.5
-        demo_path: Demos/Demo_L3.demo
-    behavioral_cloning:
-      strength: 1
-      demo_path: Demos/Demo_L3.demo
+        strength: 1
+        gamma: 0.99
     max_steps: 2.0e6
     time_horizon: 64
     summary_freq: 10000

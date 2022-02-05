@@ -7,7 +7,7 @@ using Unity.MLAgents.Sensors;
 
 public class MoveToTarget : Agent
 {
-	[SerializeField] private Transform targetTransform;
+	[SerializeField] private List<Transform> targetTransforms;
 	[SerializeField] private MeshRenderer platformMeshRenderer;
 	[SerializeField] private Material winMaterial;
 	[SerializeField] private Material loseMaterial;
@@ -18,6 +18,9 @@ public class MoveToTarget : Agent
 	private ModelManager modelManager;
 	private Camera mainCamera;
 	private GameObject agentCameraObject;
+	private bool hitA = false;
+	private bool enableTargetB;
+	private int targetIdx = 0;
 
 	public float moveSpeed;
 	public float rotateSpeed;
@@ -35,24 +38,28 @@ public class MoveToTarget : Agent
 		agentCameraObject = transform.GetChild(0).GetChild(0).gameObject;
 		agentCameraObject.SetActive(useAgentCamera);
 		mainCamera.enabled = !useAgentCamera;
-	} 
+	}
 
     public override void OnEpisodeBegin()
     {
-		transform.localPosition = new Vector3(Random.Range(-7.5f, -1.5f), 0, Random.Range(-7.5f, 7.5f));
-		transform.localRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-		targetTransform.localPosition = new Vector3(Random.Range(1.5f, 7.5f), 0, Random.Range(-7.5f, 7.5f));
-
-		modelManager.ResetArena();
-
-		//platformMeshRenderer.material = defaultMaterial;
+		hitA = false;
+		enableTargetB = modelManager.ResetArena(transform, targetTransforms);
     }
+
 	public override void CollectObservations(VectorSensor sensor)
 	{
 		sensor.AddObservation(transform.localPosition);
 		sensor.AddObservation(transform.forward);
 		sensor.AddObservation(rigidBody.velocity);
-		sensor.AddObservation(targetTransform.localPosition);
+		sensor.AddObservation(targetTransforms[0].localPosition);
+		if (enableTargetB)
+        {
+			sensor.AddObservation(targetTransforms[1].localPosition);
+        } 
+		else
+        {
+			sensor.AddObservation(Vector3.zero);
+        }
 
         // raycast
         //RaycastHit hit;
@@ -88,15 +95,39 @@ public class MoveToTarget : Agent
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if ( other.tag == "Goal")
+		if ( other.tag == "GoalA")
         {
-            SetReward(goalReward);
-            platformMeshRenderer.material = winMaterial;
-            EndEpisode();
-        }
-		if (other.tag == "Wall")
+			hitA = true;
+			targetTransforms[0].gameObject.SetActive(false);
+			if (!enableTargetB)
+            {
+				AddReward(goalReward);
+				platformMeshRenderer.material = winMaterial;
+				EndEpisode();
+            } 
+			else
+            {
+				AddReward(goalReward);
+            }
+        } 
+		else if (other.tag == "GoalB")
 		{
-            //SetReward(-0.05f);
+			if (!hitA)
+            {
+				SetReward(wallReward);
+				platformMeshRenderer.material = loseMaterial;
+				EndEpisode();
+			} 
+			else
+            {
+				AddReward(goalReward);
+				platformMeshRenderer.material = winMaterial;
+				EndEpisode();
+            }
+
+		} 
+		else if (other.tag == "Wall")
+		{
             SetReward(wallReward);
             platformMeshRenderer.material = loseMaterial;
             EndEpisode();

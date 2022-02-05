@@ -585,26 +585,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6010073958059449139, guid: a89121cf1390d584c98d1b97500621c5, type: 3}
       propertyPath: DemonstrationName
-      value: Demo_L3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7703909042886233527, guid: a89121cf1390d584c98d1b97500621c5, type: 3}
-      propertyPath: defaultLevel
-      value: 3
+      value: Demo-L1
       objectReference: {fileID: 0}
     - target: {fileID: 7892023981054404965, guid: a89121cf1390d584c98d1b97500621c5, type: 3}
       propertyPath: useAgentCamera
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7892023981054404966, guid: a89121cf1390d584c98d1b97500621c5, type: 3}
-      propertyPath: m_Model
-      value: 
-      objectReference: {fileID: 5022602860645237092, guid: 59709c1c56bad914d85314b745ea0a8c, type: 3}
-    - target: {fileID: 7892023981054404966, guid: a89121cf1390d584c98d1b97500621c5, type: 3}
-      propertyPath: m_BehaviorName
-      value: TargetSeeker
-      objectReference: {fileID: 0}
-    - target: {fileID: 7892023981054404966, guid: a89121cf1390d584c98d1b97500621c5, type: 3}
-      propertyPath: m_BehaviorType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7892073280845397772, guid: a89121cf1390d584c98d1b97500621c5, type: 3}

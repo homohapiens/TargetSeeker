@@ -20,7 +20,7 @@ behaviors:
       extrinsic:
         strength: 1
         gamma: 0.99
-    max_steps: 3.0e6
+    max_steps: 2.0e6
     time_horizon: 64
     summary_freq: 10000
 
@@ -34,33 +34,7 @@ environment_parameters:
           behavior: TargetSeeker
           signal_smoothing: true
           min_lesson_length: 100
-          threshold: 0.1
+          threshold: 0.4
         value: 0
       - name: SecondLesson
-        completion_criteria:
-          measure: progress
-          behavior: TargetSeeker
-          signal_smoothing: true
-          min_lesson_length: 100
-          threshold: 0.6
-          require_reset: true
         value: 1
-      - name: ThirdLesson
-        completion_criteria:
-          measure: progress
-          behavior: TargetSeeker
-          signal_smoothing: true
-          min_lesson_length: 100
-          threshold: 0.72
-        value: 2
-      - name: FourthLesson
-        completion_criteria:
-          measure: progress
-          behavior: TargetSeeker
-          signal_smoothing: true
-          min_lesson_length: 100
-          threshold: 0.85
-          require_reset: true
-        value: 3
-      - name: FifthLesson
-        value: 4

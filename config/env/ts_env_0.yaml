@@ -19,20 +19,20 @@ behaviors:
       num_layers: 2
     reward_signals:
       extrinsic:
-        strength: 1.0
+        strength: 0.1
         gamma: 0.99
       gail:
-        strength: 0.5
+        strength: 1
         gamma: 0.99
-        demo_path: Demos/Demo_L3.demo
+        demo_path: Demos/Demo-L1.demo
     behavioral_cloning:
-      strength: 0.5
-      demo_path: Demos/Demo_L3.demo
-    max_steps: 2.0e6
+      strength: 1
+      demo_path: Demos/Demo-L1.demo
+    max_steps: 3.0e6
     time_horizon: 64
     summary_freq: 10000
 
 # Environment settings
 environment_parameters:
-  # Agent levels - 0,1,2,3
-  agent_level: 0
+  # Agent levels - 0,1,2,3,4
+  agent_level: 1

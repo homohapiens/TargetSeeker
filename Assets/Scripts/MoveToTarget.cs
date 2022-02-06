@@ -18,9 +18,9 @@ public class MoveToTarget : Agent
 	private ModelManager modelManager;
 	private Camera mainCamera;
 	private GameObject agentCameraObject;
-	private bool hitA = false;
+	private bool hitA;
 	private bool enableTargetB;
-	private int targetIdx = 0;
+	private int targetIdx;
 
 	public float moveSpeed;
 	public float rotateSpeed;
@@ -43,6 +43,7 @@ public class MoveToTarget : Agent
     public override void OnEpisodeBegin()
     {
 		hitA = false;
+		targetIdx = 0;
 		enableTargetB = modelManager.ResetArena(transform, targetTransforms);
     }
 
@@ -51,28 +52,22 @@ public class MoveToTarget : Agent
 		sensor.AddObservation(transform.localPosition);
 		sensor.AddObservation(transform.forward);
 		sensor.AddObservation(rigidBody.velocity);
-		sensor.AddObservation(targetTransforms[0].localPosition);
-		if (enableTargetB)
-        {
-			sensor.AddObservation(targetTransforms[1].localPosition);
-        } 
-		else
-        {
-			sensor.AddObservation(Vector3.zero);
-        }
+		sensor.AddObservation(targetTransforms[targetIdx].localPosition);
 
+        /* 
         // raycast
-        //RaycastHit hit;
-        //float maxHitDist = 10f;
-        //float hitDist = maxHitDist;
-        //Color rayColor = Color.yellow;
-        //if (Physics.Raycast(transform.position, transform.forward, out hit, maxHitDist))
-        //{
-        //    hitDist = hit.distance;
-        //    rayColor = Color.red;
-        //}
-        //Debug.DrawRay(transform.position, transform.forward * hitDist, rayColor, Time.deltaTime);
-        //sensor.AddObservation(hitDist);
+		RaycastHit hit;
+        float maxHitDist = 10f;
+        float hitDist = maxHitDist;
+        Color rayColor = Color.yellow;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, maxHitDist))
+        {
+            hitDist = hit.distance;
+            rayColor = Color.red;
+        }
+        Debug.DrawRay(transform.position, transform.forward * hitDist, rayColor, Time.deltaTime);
+        sensor.AddObservation(hitDist);
+		*/
     }
 
 	public override void OnActionReceived(ActionBuffers actions)
@@ -98,17 +93,14 @@ public class MoveToTarget : Agent
 		if ( other.tag == "GoalA")
         {
 			hitA = true;
+			targetIdx = 1;
 			targetTransforms[0].gameObject.SetActive(false);
+			AddReward(goalReward);
 			if (!enableTargetB)
             {
-				AddReward(goalReward);
 				platformMeshRenderer.material = winMaterial;
 				EndEpisode();
             } 
-			else
-            {
-				AddReward(goalReward);
-            }
         } 
 		else if (other.tag == "GoalB")
 		{

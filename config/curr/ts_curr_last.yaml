@@ -1,4 +1,3 @@
-# Using environment parameters - Agent Level 0 
 behaviors:
   TargetSeeker:
     trainer_type: ppo
@@ -19,20 +18,24 @@ behaviors:
       num_layers: 2
     reward_signals:
       extrinsic:
-        strength: 0.2
-        gamma: 0.99
-      gail:
         strength: 1
         gamma: 0.99
-        demo_path: Demos/NewDemo-L1.demo
-    behavioral_cloning:
-      strength: 1
-      demo_path: Demos/NewDemo-L1.demo
     max_steps: 3.0e6
     time_horizon: 64
     summary_freq: 10000
 
 # Environment settings
 environment_parameters:
-  # Agent levels - 0,1,2,3,4
-  agent_level: 1
+  agent_level:
+    curriculum:
+      - name: FourthLesson
+        completion_criteria:
+          measure: progress
+          behavior: TargetSeeker
+          signal_smoothing: true
+          min_lesson_length: 100
+          threshold: 0.5
+          require_reset: true
+        value: 3
+      - name: FifthLesson
+        value: 4

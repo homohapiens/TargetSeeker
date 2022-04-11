@@ -12,6 +12,11 @@
 /[Vv]env/
 /[Rr]ecording[s]/
 /[Rr]esult[s]/
+/[Pp]ython/[Rr]esult[s]
+/[Pp]ython/[Tt]mp
+/[Pp]ython/*.zip
+/[Pp]ython/*.onnx
+/[Pp]ython/.ipynb_checkpoints
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta

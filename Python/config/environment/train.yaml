@@ -1,0 +1,19 @@
+run_id : test_run
+force : False
+resume: False
+
+num_env : 8
+env_path : C:/main/MLAgents/TargetSeeker/Build/win/TargetSeeker
+
+summary_freq : 10_000
+check_point_freq : 1_000_000
+n_check_points : 5
+
+base_port: 5005
+base_seed:  0
+visual_obs: False
+allow_multiple_obs: False
+env_registry: default_registry
+
+# Unity
+agent_level : 0

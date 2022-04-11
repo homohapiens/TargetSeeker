@@ -1,0 +1,21 @@
+batch_size : 1024
+buffer_size : 10240
+n_epochs : 3
+
+updates : 2000
+total_training_steps : BUFFER_SIZE * UPDATES
+steps_per_update : BUFFER_SIZE / NUM_ENVS
+
+beta : 0.0005
+PI : [128, 128]
+VF : [128, 128]
+
+learning_rate:
+  initial_value: 0.0003
+  schedule: linear
+clip_range:
+  initial_value: 0.2
+  schedule: linear
+clip_range_vf: 
+  initial_value: 0.2
+  schedule: linear

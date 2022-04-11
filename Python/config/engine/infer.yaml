@@ -1,0 +1,6 @@
+width : 800
+height : 800
+quality_level : 4
+time_scale : 1
+target_frame_rate : -1
+capture_frame_rate : 60

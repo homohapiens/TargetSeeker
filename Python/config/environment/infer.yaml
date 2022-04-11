@@ -1,0 +1,13 @@
+run_id : test_run
+
+num_env : 1
+env_path : C:/main/MLAgents/TargetSeeker/Build/win/TargetSeeker
+
+base_port: 5005
+base_seed:  0
+visual_obs: True
+allow_multiple_obs: False
+env_registry: default_registry
+
+# Unity
+agent_level : 0
